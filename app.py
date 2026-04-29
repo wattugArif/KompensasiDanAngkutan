@@ -14,7 +14,7 @@ def process_uploaded_csv(file):
 
 def main():
     st.title("🛠️ Gajian Kompensasi dan Angkutan  App")
-    tab1, tab2, tab3 = st.tabs(["📄 Initialisasi", "🧱 Rekap Data", "📦 Download File Gajian"])
+    tab1, tab2, tab3 = st.tabs(["📄 Inisialisasi", "🧱 Rekap Data", "📦 Download File Gajian"])
 
     var1 = None
     var2 = None
