@@ -200,7 +200,7 @@ class MultiPaymentExcel:
         if "rupiah_style" not in ws.parent.named_styles:
             ws.parent.add_named_style(rp_style)
 
-        # Konfigurasi per mode (hanya 2 mode sekarang)
+        # Konfigurasi per mode
         mode_config = {
             "kompensasi": {
                 "title": "PEMBAYARAN KOMPENSASI LAHAN",
@@ -360,7 +360,7 @@ class PaymentExcelBuilder:
     def create_multi_payment_excel(
         self,
         output_file: str,
-        date_text: str = "Meliau, 11 Februati 2026",
+        date_text: str = "Meliau, 11 Februari 2026",
         signers: dict = None
     ):
         if signers is None:
