@@ -335,8 +335,14 @@ class MultiPaymentExcel:
 class PaymentExcelBuilder:
     def __init__(self, df: pd.DataFrame):
         self.df = df.sort_values(by=['Prospek']).copy()
-        self.df.fillna(0, inplace=True)
+        # --- FIXED BLOCK ---
+        # Fill numeric columns with 0, and non-numeric columns with an empty string
+        numeric_cols = self.df.select_dtypes(include=['number']).columns
+        string_cols = self.df.select_dtypes(exclude=['number']).columns
         
+        self.df[numeric_cols] = self.df[numeric_cols].fillna(0)
+        self.df[string_cols] = self.df[string_cols].fillna("")
+        # -------------------        
     def _group_data(self, group_col, columns, rename_map, values_structure, mode: str):
         raw_data = self.df[columns].rename(columns=rename_map)
         raw_data_list = raw_data.to_dict(orient="records")
