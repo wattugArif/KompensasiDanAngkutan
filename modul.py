@@ -212,8 +212,8 @@ class MultiPaymentExcel:
             "angkutan": {
                 "title": "PEMBAYARAN ANGKUTAN SAMPEL",
                 "uraian": "Untuk Pembayaran Angkutan Sampel sbb :",
-                "headers": ["No", "Tgl. Selesai", "Kode Tespit", "Grid", "Pemilik Lahan", "Harga Angkutan", "TTD"],
-                "harga_col": 7,
+                "headers": ["No", "Tgl. Selesai", "Kode Tespit", "Grid", "Pemilik Lahan","Total Koli", "Harga Angkutan", "TTD"],
+                "harga_col": 8,
                 "subtotal": False,
             }
         }
@@ -390,9 +390,9 @@ class PaymentExcelBuilder:
                 "sheet": "Angkutan",
                 "mode": "angkutan",
                 "group_col": "Prospek",
-                "columns": ["Prospek", "Tanggal Sampling", "Kode Testpit", "Grid", "Pemilik Lahan", "Tarif Angkutan"],
+                "columns": ["Prospek", "Tanggal Sampling", "Kode Testpit", "Grid", "Pemilik Lahan","Total Koli", "Tarif Angkutan"],
                 "rename": {"Tarif Angkutan": "harga"},
-                "values": ["Tanggal Sampling", "Kode Testpit", "Grid", "Pemilik Lahan", "harga"]
+                "values": ["Tanggal Sampling", "Kode Testpit", "Grid", "Pemilik Lahan","Total Koli", "harga"]
             }
         ]
 
